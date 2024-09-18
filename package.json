@@ -5,13 +5,27 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "module",
+    "url": "git+https://github.com/clmaxime/gemini.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clmaxime/gemini/issues"
+  },
+  "homepage": "https://github.com/clmaxime/gemini#readme",
   "dependencies": {
     "@google/generative-ai": "^0.19.0",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
   }
 }

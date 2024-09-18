@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    width: 400px;
+    max-width: 100%;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.chat-header {
+    background: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.chat-messages {
+    padding: 20px;
+    height: 300px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.chat-input button {
+    padding: 10px 15px;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.chat-message {
+    display: flex;
+    margin-bottom: 10px;
+    max-width: 70%;
+}
+
+.message-bot-container {
+    justify-content: flex-start;
+    display: flex;
+}
+
+.message-user-container {
+    justify-content: flex-end;
+    display: flex;
+}
+
+.message-bot, .message-user {
+    padding: 10px;
+    border-radius: 15px;
+    word-wrap: break-word;
+}
+
+.message-bot {
+    background-color: #f1f0f0;
+    color: #333;
+}
+
+.message-user {
+    background-color: #007bff;
+    color: white;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chatbot</h2>
+        </div>
+        <div class="chat-messages">
+            <% if (typeof answer !== 'undefined' && answer !== null) { %>
+              <div class="chat-message">
+                <div class="message-user">
+                    <%= question %>
+                  </div>
+                <div class="message-bot">
+                  <%= answer %>
+                </div>
+              </div>
+            <% } %>
+          </div>
+          
+        
+        <form class="chat-input" action="/ask" method="POST">
+            <input type="text" id="user-input" name="question" placeholder="Écris un message...">
+            <button>Envoyer</button>
+        </form>
+    </div>
+
+    <script>
+    
+    </script>
+</body>
+</html>

@@ -1,20 +1,26 @@
-import "dotenv/config";
+import dotenv from "dotenv";
+import Route from "./routes/chatbotRoutes.js";
+import express from "express";
 
-import { GoogleGenerativeAI } from "@google/generative-ai";
+const app = express();
+const dotenvConfig = dotenv.config();
 
-import fs from "fs"; // Permet de lire/ecrire des fichiers
+const PORT = process.env.PORT || 7777;
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+// Configurer le moteur de templates EJS
+app.set("view engine", "ejs");
 
-console.log("process.env.GOOGLE_API_KEY", process.env.GOOGLE_API_KEY);
+// Dossier contenant les fichiers EJS (par défaut "views")
+app.set("views", "./public/views");
 
-async function run() {
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+// static files
+app.use(express.static("public"));
 
-  const prompt = "Que fait-on ce soir ?";
+//Middleware méthode POST
+app.use(express.urlencoded({ extended: true }));
 
-  const result = await model.generateContent(prompt);
+app.use("/", Route);
 
-  console.log("voici le resultat: ", result.response.text());
-}
-run();
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
