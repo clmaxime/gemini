@@ -77,3 +77,10 @@ J'ai ensuite adapté le template et modifié quelques éléments, ce qui donene 
    
 ## Élaboration de Prompts Avancés
 Grâce au fichier json, le chatbot est spécialisé dans son contexte.
+
+## Choix des technos
+J'ai choisi Node.js pour le projet chatbot en raison de sa gestion efficace des requêtes. Utiliser JavaScript, le même langage de développement, simplifie le code et la maintenance. La large collection de modules via npm a facilité l'ajout de fonctionnalités nécessaires.
+J'ai aussi intégré le système de vues EJS pour générer des pages dynamiques et améliorer l'expérience utilisateur avec des contenus adaptés.
+
+## Méthodologie
+Ma méthode pour le projet a été assez classique : j'ai principalement suivi les documents de référence et les cours pour me guider. Quand j'avais des questions ou des doutes, je n'hésitais pas à demander de l'aide à mon professeur. Cette approche m'a permis d'avancer à mon rythme tout en ayant un soutien disponible lorsque c'était nécessaire.
