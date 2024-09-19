@@ -1,0 +1,39 @@
+{
+    "intents": [
+      {
+        "name": "contact_support",
+        "patterns": [
+          "contacter support",
+          "envoyer un mail",
+          "contacter un agent",
+          "parler à quelqu'un",
+          "aide",
+          "contact email",
+          "envoyer un email"
+        ],
+        "response": "Pour contacter le support, voici les horaires d'ouverture et l'adresse email : contact@fastdeliv.fr. Le service est ouvert de 9h à 18h, du lundi au vendredi."
+      },
+      {
+        "name": "order_status",
+        "patterns": [
+          "suivi commande",
+          "statut commande",
+          "où est ma commande",
+          "je n'ai pas reçu ma commande"
+        ],
+        "response": "Merci de fournir votre numéro de commande pour que je puisse vous aider."
+      },
+      {
+        "name": "general_service",
+        "patterns": [
+          "qu'est-ce que FastDeliv",
+          "services FastDeliv",
+          "livraison",
+          "délai de livraison"
+        ],
+        "response": "FastDeliv est un service de livraison rapide. Nous assurons la livraison de vos colis en un temps record, avec un suivi en temps réel."
+      }
+    ],
+    "fallback": "Je suis programmé uniquement pour répondre à des questions concernant FastDeliv. Pouvez-vous reformuler votre question ?"
+  }
+  

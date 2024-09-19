@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot</title>
     <style>
-      body {
+body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     display: flex;
@@ -37,7 +37,7 @@
     overflow-y: auto;
     border-bottom: 1px solid #ddd;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
 }
 
 .chat-input {
@@ -63,7 +63,6 @@
 }
 
 .chat-message {
-    display: flex;
     margin-bottom: 10px;
     max-width: 70%;
 }
@@ -71,11 +70,13 @@
 .message-bot-container {
     justify-content: flex-start;
     display: flex;
+    width: 70%; 
 }
 
 .message-user-container {
     justify-content: flex-end;
     display: flex;
+    width: 70%; 
 }
 
 .message-bot, .message-user {
@@ -99,31 +100,34 @@
 </head>
 <body>
     <div class="chat-container">
-        <div class="chat-header">
-            <h2>Chatbot</h2>
-        </div>
-        <div class="chat-messages">
-            <% if (typeof answer !== 'undefined' && answer !== null) { %>
-              <div class="chat-message">
-                <div class="message-user">
-                    <%= question %>
-                  </div>
-                <div class="message-bot">
-                  <%= answer %>
+      <div class="chat-header">
+        <h2>Chatbot</h2>
+      </div>
+      <div class="chat-messages">
+        <% if (conversation && conversation.length > 0) { %>
+          <% conversation.forEach((message) => { %>
+            <div class="chat-message">
+              <div class="message-user">
+                <div class="message-content user-message">
+                  <%= message.question %>
                 </div>
               </div>
-            <% } %>
-          </div>
-          
-        
-        <form class="chat-input" action="/ask" method="POST">
-            <input type="text" id="user-input" name="question" placeholder="Écris un message...">
-            <button>Envoyer</button>
-        </form>
+              <div class="message-bot">
+                <div class="message-content bot-message">
+                  <%= message.answer %>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        <% } %>
+      </div>
+  
+      <form class="chat-input" action="/ask" method="POST">
+        <input type="text" id="user-input" name="question" placeholder="Écris un message...">
+        <button>Envoyer</button>
+      </form>
     </div>
-
-    <script>
-    
-    </script>
-</body>
+  </body>
+  
+  
 </html>
